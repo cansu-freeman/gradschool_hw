@@ -27,16 +27,18 @@ def banana_opt_fixstep(x0, s=0.01, eps=0.0001, imax=10000):
 def banana_opt_backtrack(x0, eps=0.0001, imax=10000):
     i = 0
     x = x0
+
     while norm(grad_b(x)) > eps and i < imax:
         i = i + 1
         gf = grad_b(x)
         d = -gf/norm(gf)
-        # Step size with backtracking
+        
+	# Step size with backtracking
         s = 1
-
         while banana(x+s*d) > banana(x):
             s = s/2
-        x = x + s*d
+ 	
+	x = x + s*d
     return x, i
 
 def J(x):
