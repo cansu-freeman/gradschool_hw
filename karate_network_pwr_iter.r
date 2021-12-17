@@ -1,5 +1,5 @@
 # Reading and Plotting Data 
-A = read.table("karate club.txt") %>% as.matrix()
+A = read.table("karate club.txt") %>% as.matrix() #https://networkrepository.com/soc-karate.php
 g = graph_from_adjacency_matrix(A, mode = 'undirected', weighted = NULL, diag = FALSE)
 plot.igraph(g, vertex.label=NA, vertex.size = 10)
 
